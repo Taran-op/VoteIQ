@@ -203,4 +203,4 @@ npm run dev
 
 # Author
 
-Built by Taran S for the Google Antigravity Hackathon.
+Built by Taranjeet Singh for the Google Antigravity Hackathon.
