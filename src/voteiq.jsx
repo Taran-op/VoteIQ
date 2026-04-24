@@ -813,25 +813,22 @@ function AIChat({ initialMsg }) {
         setMessages(m => [...m, { role: "user", content: text }]);
         setLoading(true);
         try {
-            const contents = newHistory.map(m => ({
-                role: m.role === "assistant" ? "model" : "user",
-                parts: [{ text: m.content }]
-            }));
-            const res = await fetch(
-                `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${import.meta.env.VITE_GEMINI_API_KEY}`,
-                {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({
-                        systemInstruction: { parts: [{ text: "You are VoteIQ, a non-partisan election education assistant. Help people understand how elections work — voter registration, primaries, campaign finance, voting systems, ballot counting, certification, and transitions of power. Be factual, clear, and non-partisan. Never express opinions on candidates or parties. Keep responses to 3-5 paragraphs." }] },
-                        contents
-                    })
-                }
-            );
+            const res = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": `Bearer ${import.meta.env.VITE_GROQ_API_KEY}`
+                },
+                body: JSON.stringify({
+                    model: "llama-3.1-8b-instant",
+                    max_tokens: 1000,
+                    messages: newHistory
+                })
+            });
             const data = await res.json();
             setLoading(false);
-            const reply = data.candidates?.[0]?.content?.parts?.[0]?.text;
-            if (reply) {
+            if (data.choices?.[0]?.message?.content) {
+                const reply = data.choices[0].message.content;
                 setHistory(h => [...h, { role: "assistant", content: reply }]);
                 setMessages(m => [...m, { role: "assistant", content: reply }]);
             } else {
