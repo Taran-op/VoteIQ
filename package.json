@@ -1,0 +1,25 @@
+{
+  "name": "contest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "vite": "^8.0.10"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "^6.0.1",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "node-fetch": "^3.3.2",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5"
+  }
+}
