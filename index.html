@@ -24,67 +24,27 @@
     gtag('config', 'G-PLACEHOLDER', { anonymize_ip: true });
   </script>
 
-  <!-- Google Translate -->
-  <script type="text/javascript">
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement(
-        { pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE },
-        'google_translate_element'
-      );
-    }
-  </script>
-  <script type="text/javascript"
-    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <!-- Google Translate (hidden) -->
+  <div id="google_translate_element" style="display:none;"></div>
 
-  <!-- Google Translate Theme Override -->
+  <!-- Styled trigger button -->
+  <button id="translate-btn"
+    onclick="document.getElementById('google_translate_element').style.display='block'; this.style.display='none';"
+    style="
+    position: fixed; bottom: 1rem; right: 1rem; z-index: 9999;
+    background: #c9a84c; color: #0b0b0f;
+    border: none; border-radius: 6px;
+    padding: 8px 18px;
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-size: 0.78rem; font-weight: 600;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    cursor: pointer; transition: background 0.2s, transform 0.2s;
+  " onmouseover="this.style.background='#e8c97a'; this.style.transform='translateY(-1px)'"
+    onmouseout="this.style.background='#c9a84c'; this.style.transform='translateY(0)'">
+    🌐 Translate
+  </button>
+
   <style>
-    #google_translate_element {
-      background: transparent !important;
-      border: none !important;
-      padding: 0 !important;
-    }
-
-    .goog-te-gadget {
-      font-family: 'Outfit', system-ui, sans-serif !important;
-      color: transparent !important;
-      font-size: 0 !important;
-    }
-
-    .goog-te-gadget .goog-te-combo {
-      background: #c9a84c !important;
-      border: none !important;
-      border-radius: 6px !important;
-      color: #0b0b0f !important;
-      font-family: 'Outfit', system-ui, sans-serif !important;
-      font-size: 0.78rem !important;
-      font-weight: 600 !important;
-      letter-spacing: 0.06em !important;
-      text-transform: uppercase !important;
-      padding: 8px 18px !important;
-      cursor: pointer !important;
-      outline: none !important;
-      transition: background 0.2s, transform 0.2s !important;
-      -webkit-appearance: none !important;
-      appearance: none !important;
-    }
-
-    .goog-te-gadget .goog-te-combo:hover {
-      background: #e8c97a !important;
-      transform: translateY(-1px) !important;
-    }
-
-    .goog-te-gadget .goog-te-combo:focus {
-      box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.35) !important;
-    }
-
-    .goog-te-gadget img {
-      display: none !important;
-    }
-
-    .goog-logo-link {
-      display: none !important;
-    }
-
     .goog-te-banner-frame {
       display: none !important;
     }
@@ -93,17 +53,3 @@
       top: 0 !important;
     }
   </style>
-</head>
-
-<body>
-  <!-- Skip navigation for screen readers -->
-  <a href="#main-content" class="skip-link">Skip to main content</a>
-
-  <!-- Google Translate Widget -->
-  <div id="google_translate_element" style="position:fixed;bottom:1rem;right:1rem;z-index:9999;"></div>
-
-  <div id="root"></div>
-  <script type="module" src="/src/main.jsx"></script>
-</body>
-
-</html>
