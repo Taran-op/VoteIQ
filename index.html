@@ -25,7 +25,9 @@
   </script>
 
   <!-- Google Translate (hidden) -->
-  <div id="google_translate_element" style="display:none;"></div>
+  <div id="google_translate_element"
+    style="display:none; position:fixed; bottom:1rem; right:1rem; z-index:9999; background:#1e1e28; border:1px solid rgba(201,168,76,0.3); border-radius:8px; padding:8px 12px;">
+  </div>
 
   <!-- Styled trigger button -->
   <button id="translate-btn"
@@ -39,12 +41,32 @@
     font-size: 0.78rem; font-weight: 600;
     letter-spacing: 0.06em; text-transform: uppercase;
     cursor: pointer; transition: background 0.2s, transform 0.2s;
-  " onmouseover="this.style.background='#e8c97a'; this.style.transform='translateY(-1px)'"
-    onmouseout="this.style.background='#c9a84c'; this.style.transform='translateY(0)'">
-    🌐 Translate
-  </button>
+  " onmouseover="this.style.background='#e8c97a';this.style.transform='translateY(-1px)'"
+    onmouseout="this.style.background='#c9a84c';this.style.transform='translateY(0)'">🌐 Translate</button>
 
   <style>
+    .goog-te-gadget .goog-te-combo {
+      background: #1e1e28 !important;
+      color: #e8e6e0 !important;
+      border: 1px solid rgba(201, 168, 76, 0.3) !important;
+      border-radius: 6px !important;
+      padding: 6px 10px !important;
+      font-family: 'Outfit', system-ui, sans-serif !important;
+      font-size: 0.78rem !important;
+      cursor: pointer !important;
+      outline: none !important;
+    }
+
+    .goog-te-gadget {
+      color: transparent !important;
+      font-size: 0 !important;
+    }
+
+    .goog-logo-link,
+    .goog-te-gadget img {
+      display: none !important;
+    }
+
     .goog-te-banner-frame {
       display: none !important;
     }
