@@ -1,45 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="VoteIQ — An interactive election education platform powered by Google Gemini AI. Learn how elections work, from voter registration to the transition of power." />
-    <meta name="keywords" content="election, democracy, voting, civic education, Google Gemini AI" />
-    <meta name="theme-color" content="#0b0b0f" />
-    <meta property="og:title" content="VoteIQ — Election Education Platform" />
-    <meta property="og:description" content="Understand how elections work with Google Gemini-powered AI assistance." />
-    <meta property="og:type" content="website" />
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗳️</text></svg>" />
-    <title>VoteIQ — Election Education Platform</title>
 
-    <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PLACEHOLDER"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-PLACEHOLDER', { anonymize_ip: true });
-    </script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="VoteIQ — An interactive election education platform powered by Google Gemini AI. Learn how elections work, from voter registration to the transition of power." />
+  <meta name="keywords" content="election, democracy, voting, civic education, Google Gemini AI" />
+  <meta name="theme-color" content="#0b0b0f" />
+  <meta property="og:title" content="VoteIQ — Election Education Platform" />
+  <meta property="og:description" content="Understand how elections work with Google Gemini-powered AI assistance." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗳️</text></svg>" />
+  <title>VoteIQ — Election Education Platform</title>
 
-    <!-- Google Translate -->
-    <script type="text/javascript">
-      function googleTranslateElementInit() {
-        new google.translate.TranslateElement(
-          { pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE },
-          'google_translate_element'
-        );
-      }
-    </script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-  </head>
-  <body>
-    <!-- Skip navigation for screen readers -->
-    <a href="#main-content" class="skip-link">Skip to main content</a>
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PLACEHOLDER"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-PLACEHOLDER', { anonymize_ip: true });
+  </script>
 
-    <!-- Google Translate Widget -->
-    <div id="google_translate_element" style="position:fixed;bottom:1rem;right:1rem;z-index:9999;background:rgba(11,11,15,0.9);padding:6px 10px;border-radius:8px;border:1px solid rgba(255,255,255,0.1)"></div>
+  <!-- Google Translate -->
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement(
+        { pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE },
+        'google_translate_element'
+      );
+    }
+  </script>
+  <script type="text/javascript"
+    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+  <!-- Google Translate Theme Override -->
+  <style>
+    #google_translate_element {
+      background: transparent !important;
+      border: none !important;
+      padding: 0 !important;
+    }
+
+    .goog-te-gadget {
+      font-family: 'Outfit', system-ui, sans-serif !important;
+      color: transparent !important;
+      font-size: 0 !important;
+    }
+
+    .goog-te-gadget .goog-te-combo {
+      background: rgba(11, 11, 15, 0.92) !important;
+      border: 1px solid rgba(255, 255, 255, 0.09) !important;
+      border-radius: 8px !important;
+      color: #9a9890 !important;
+      font-family: 'Outfit', system-ui, sans-serif !important;
+      font-size: 0.75rem !important;
+      padding: 6px 12px !important;
+      cursor: pointer !important;
+      outline: none !important;
+      transition: border-color 0.2s, color 0.2s !important;
+      -webkit-appearance: none !important;
+      appearance: none !important;
+    }
+
+    .goog-te-gadget .goog-te-combo:hover {
+      border-color: rgba(201, 168, 76, 0.4) !important;
+      color: #c9a84c !important;
+    }
+
+    .goog-te-gadget .goog-te-combo:focus {
+      border-color: #c9a84c !important;
+      color: #c9a84c !important;
+      box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.15) !important;
+    }
+
+    .goog-te-gadget img {
+      display: none !important;
+    }
+
+    .goog-logo-link {
+      display: none !important;
+    }
+
+    .goog-te-banner-frame {
+      display: none !important;
+    }
+
+    body {
+      top: 0 !important;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Skip navigation for screen readers -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Google Translate Widget -->
+  <div id="google_translate_element" style="position:fixed;bottom:1rem;right:1rem;z-index:9999;"></div>
+
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
 </html>
